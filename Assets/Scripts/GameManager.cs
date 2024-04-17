@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public int cardCount = 0;
 
     float time = 30.0f;
-    float direction = 0.1f;
 
     private void Awake()
     {
@@ -49,6 +48,7 @@ public class GameManager : MonoBehaviour
         if (time < 0.0f)
         {
             endTxt.SetActive(true);
+            Time.timeScale = 0.0f;
         }
         if (time > 10.0f)
         {
