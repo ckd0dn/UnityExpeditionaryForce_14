@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     public int cardCount = 0;
 
-    float time = 0.0f;
     public int DeathCount;
     public GameObject imageDeath1;
     public GameObject imageDeath2;
