@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public int cardCount = 0;
 
-    float time = 30.0f;
+    float time = 0.0f;
 
     private void Awake()
     {
@@ -38,23 +38,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time -= Time.deltaTime;
+        time += Time.deltaTime;
         timeTxt.text = time.ToString("N2");
 
-        if (time < 0.0f)
+        if(time > 30f)
         {
             endTxt.SetActive(true);
             Time.timeScale = 0.0f;
         }
-        if (time > 10.0f)
-        {
-            timeTxt.color = Color.white;
-        }
-        else
-        {
-            timeTxt.color = new Color(255 / 255f, 0 / 255f, 0 / 255f, 255 / 255f);
-        }
-
+        
     }
 
     public void Matched()
