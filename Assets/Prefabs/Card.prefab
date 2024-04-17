@@ -54,6 +54,7 @@ MonoBehaviour:
   anim: {fileID: 6032751665437497110}
   clip: {fileID: 8300000, guid: 51222309f4a75fa4f8279ab06cd17f9f, type: 3}
   frontImage: {fileID: 4935705663087753843}
+  backImage: {fileID: 8002441878412261999}
 --- !u!95 &6032751665437497110
 Animator:
   serializedVersion: 5
