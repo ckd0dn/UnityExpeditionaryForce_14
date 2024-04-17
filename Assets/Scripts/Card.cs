@@ -39,9 +39,10 @@ public class Card : MonoBehaviour
     {
         audioSource.PlayOneShot(clip); // 겹치지 않는 소리
 
+
         anim.SetBool("isOpen", true);
-        front.SetActive(true);
-        back.SetActive(false);
+
+        Invoke("ActiveFrontInvoke", 0.4f);
 
         
         if(GameManager.instance.firstCard == null)
@@ -77,5 +78,11 @@ public class Card : MonoBehaviour
         anim.SetBool("isOpen", false);
         front.SetActive(false);
         back.SetActive(true);
+    }
+
+    void ActiveFrontInvoke()
+    {
+        front.SetActive(true);
+        back.SetActive(false);
     }
 }
