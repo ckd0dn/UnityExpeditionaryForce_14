@@ -14,6 +14,8 @@ public class Card : MonoBehaviour
     public AudioClip clip;  
 
     public SpriteRenderer frontImage;
+    public SpriteRenderer backImage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,7 @@ public class Card : MonoBehaviour
     public void CloseCard()
     {
         Invoke("CloseCardInvoke", 1.0f);
+        backImage.color = new Color(100 / 255f, 100 / 255f, 100 / 255f, 255 / 255f);
     }
 
     void CloseCardInvoke()

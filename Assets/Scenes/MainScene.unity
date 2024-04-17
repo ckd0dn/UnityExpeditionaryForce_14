@@ -245,10 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a67876ecd7d93418f615374fcc3049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 599546632}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
-  timeTxt: {fileID: 599546630}
   endTxt: {fileID: 1630832466}
+  timeTxt: {fileID: 599546630}
   clip: {fileID: 8300000, guid: 2bd96882d0aadb04f82d39ced9d483bf, type: 3}
   cardCount: 16
 --- !u!4 &566726135
@@ -373,6 +374,7 @@ GameObject:
   - component: {fileID: 599546629}
   - component: {fileID: 599546631}
   - component: {fileID: 599546630}
+  - component: {fileID: 599546632}
   m_Layer: 5
   m_Name: TimeTxt
   m_TagString: Untagged
@@ -396,7 +398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 400}
+  m_AnchoredPosition: {x: -10, y: 400}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599546630
@@ -441,6 +443,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599546628}
   m_CullTransparentMesh: 1
+--- !u!95 &599546632
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599546628}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0198d6e5c5220d4458898fa3df7cc301, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &727168940
 GameObject:
   m_ObjectHideFlags: 0
