@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
         time -= Time.deltaTime;
         timeTxt.text = time.ToString("N2");
 
-        if (time > 30f)
         if (time < 0.0f)
         {
             endTxt.SetActive(true);
