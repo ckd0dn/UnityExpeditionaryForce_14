@@ -903,11 +903,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: f5cd2fea-eff7-48b1-9d07-7689200625a4
+  cloudProjectId: 0bae3326-70a1-463c-9f36-7e13da2a733a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: FindRtan
-  organizationId: ckd0dn12
+  projectName: My project
+  organizationId: amor152394
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
