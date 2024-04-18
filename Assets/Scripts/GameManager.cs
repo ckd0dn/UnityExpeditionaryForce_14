@@ -145,22 +145,25 @@ public class GameManager : MonoBehaviour
 
     public void Hint()
     {
-        int r = Random.Range(0, cardList.Count);
-        while (hintNumbList.Contains(r))
+        if (hintNumbList.Count < 6)
         {
-            r = Random.Range(0, cardList.Count);
-        }
-
-        for (int i = 0; i < cardList.Count; i++)
-        {
-            if (r != i)
+            int r = Random.Range(0, cardList.Count);
+            while (hintNumbList.Contains(r))
             {
-                if (cardList[r].idx == cardList[i].idx)
+                r = Random.Range(0, cardList.Count);
+            }
+
+            for (int i = 0; i < cardList.Count; i++)
+            {
+                if (r != i)
                 {
-                    hintNumbList.Add(i);
-                    hintNumbList.Add(r);
-                    cardList[r].backImage.color = Color.yellow;
-                    cardList[i].backImage.color = Color.yellow;
+                    if (cardList[r].idx == cardList[i].idx)
+                    {
+                        hintNumbList.Add(i);
+                        hintNumbList.Add(r);
+                        cardList[r].backImage.color = Color.yellow;
+                        cardList[i].backImage.color = Color.yellow;
+                    }
                 }
             }
         }
