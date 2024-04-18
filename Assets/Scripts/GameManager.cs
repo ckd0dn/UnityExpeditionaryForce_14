@@ -49,8 +49,11 @@ public class GameManager : MonoBehaviour
 
         if (time < 0.0f)
         {
-            endTxt.SetActive(true);
-            Time.timeScale = 0.0f;
+            if(cardCount > 0)
+            {
+                endTxt.SetActive(true);
+                Time.timeScale = 0.0f;
+            }      
         }
         if (time > 10.0f)
         {
@@ -61,6 +64,12 @@ public class GameManager : MonoBehaviour
             timeTxt.color = new Color(255 / 255f, 0 / 255f, 0 / 255f, 255 / 255f);
             anim.SetBool("isMove", true);
         }
+    }
+
+    public void Clear()
+    {
+        Time.timeScale = 0.0f;
+        endTxt.SetActive(true);
     }
 
     public void Matched()
@@ -75,8 +84,8 @@ public class GameManager : MonoBehaviour
             cardCount -= 2;
             if(cardCount == 0)
             {
-                Time.timeScale = 0.0f;
-                endTxt.SetActive(true);
+                Invoke("Clear", 0.5f);
+
             }
         }
         else

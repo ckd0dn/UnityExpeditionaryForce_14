@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class HintButton : MonoBehaviour
 {
     public void hintButton()
     {
