@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     public GameObject imageDeath3;
     float time = 30.0f;
 
+    public List<Card> cardList = new List<Card>();
+
     private void Awake()
     {
         if (instance == null)
@@ -51,8 +53,11 @@ public class GameManager : MonoBehaviour
 
         if (time < 0.0f)
         {
-            endTxt.SetActive(true);
-            Time.timeScale = 0.0f;
+            if(cardCount > 0)
+            {
+                endTxt.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
         }
 
         if (time > 10.0f)
@@ -66,18 +71,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Clear()
+    {
+        Time.timeScale = 0.0f;
+        endTxt.SetActive(true);
+    }
+
     public void Matched()
     {
         if (firstCard.idx == secondCard.idx)
         {
             audioSource.PlayOneShot(clip);
+            cardList.Remove(firstCard);
+            cardList.Remove(secondCard);
             firstCard.DestroyCard();
             secondCard.DestroyCard();
             cardCount -= 2;
             if (cardCount == 0)
             {
-                Time.timeScale = 0.0f;
-                endTxt.SetActive(true);
+                Invoke("Clear", 0.5f);
             }
             else if (cardCount != 0)
             {
@@ -129,5 +141,20 @@ public class GameManager : MonoBehaviour
         secondCard = null;
     }
 
-    
+    public void Hint()
+    {
+        int r = Random.Range(0, cardList.Count);
+
+        for (int i = 0; i < cardList.Count; i++)
+        {
+            if (r != i)
+            {
+                if (cardList[r].idx == cardList[i].idx)
+                {
+                    cardList[r].backImage.color = Color.yellow;
+                    cardList[i].backImage.color = Color.yellow;
+                }
+            }
+        }
+    }
 }

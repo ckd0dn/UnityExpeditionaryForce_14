@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Board : MonoBehaviour
 {
-    public GameObject card;
+    public Card card;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +13,13 @@ public class Board : MonoBehaviour
         
         arr = arr.OrderBy(x  => Random.Range(0f, 7f)).ToArray();
 
-        for(int i = 0; i < 16; i++) 
+        GameManager.instance.cardList = new List<Card>();
+
+        for (int i = 0; i < 16; i++) 
         {
-            GameObject go = Instantiate(card, this.transform);
+            Card go = Instantiate(card, this.transform);
+
+            GameManager.instance.cardList.Add(go);
 
             float space = 1.4f;
 
