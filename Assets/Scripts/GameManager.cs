@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     float time = 30.0f;
 
+    public List<int> hintNumbList = new List<int>();
+
     public List<Card> cardList = new List<Card>();
 
     private void Awake()
@@ -155,6 +157,10 @@ public class GameManager : MonoBehaviour
     public void Hint()
     {
         int r = Random.Range(0, cardList.Count);
+        while (hintNumbList.Contains(r))
+        {
+            r = Random.Range(0, cardList.Count);
+        }
 
         for (int i = 0; i < cardList.Count; i++)
         {
@@ -162,6 +168,8 @@ public class GameManager : MonoBehaviour
             {
                 if (cardList[r].idx == cardList[i].idx)
                 {
+                    hintNumbList.Add(i);
+                    hintNumbList.Add(r);
                     cardList[r].backImage.color = Color.yellow;
                     cardList[i].backImage.color = Color.yellow;
                 }
