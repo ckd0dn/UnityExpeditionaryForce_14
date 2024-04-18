@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             {
                 endTxt.SetActive(true);
                 Time.timeScale = 0.0f;
-            }      
+            }
         }
         if (time > 10.0f)
         {
@@ -85,7 +85,6 @@ public class GameManager : MonoBehaviour
             if(cardCount == 0)
             {
                 Invoke("Clear", 0.5f);
-
             }
         }
         else
@@ -100,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     public void Hint()
     {
-        int r = Random.Range(0, cardList.Count + 1);
+        int r = Random.Range(0, cardList.Count);
 
         for (int i = 0; i < cardList.Count; i++)
         {
