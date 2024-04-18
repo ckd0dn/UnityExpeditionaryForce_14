@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Transform UICanvus;
 
     public Animator anim;
 
@@ -25,6 +27,11 @@ public class GameManager : MonoBehaviour
     public GameObject imageDeath1;
     public GameObject imageDeath2;
     public GameObject imageDeath3;
+
+    public GameObject plusTxt;
+    public GameObject minusTxt;
+    Vector2 createPoint;
+
     float time = 30.0f;
 
     public List<Card> cardList = new List<Card>();
@@ -87,6 +94,9 @@ public class GameManager : MonoBehaviour
             firstCard.DestroyCard();
             secondCard.DestroyCard();
             cardCount -= 2;
+            time += 3f;
+            PlusTime();
+
             if (cardCount == 0)
             {
                 Invoke("Clear", 0.5f);
@@ -110,14 +120,15 @@ public class GameManager : MonoBehaviour
                     imageDeath2.SetActive(false);
                 }
             }
-
         }
-
         else
         {
             firstCard.CloseCard();
             secondCard.CloseCard();
             DeathCount++;
+            time -= 1f;
+            MinusTime();
+
             if (DeathCount == 1)
             {
                 imageDeath1.SetActive(true);
@@ -156,5 +167,18 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlusTime()
+    {
+        GameObject go = Instantiate(plusTxt, plusTxt.transform.position, plusTxt.transform.rotation, UICanvus);
+        Destroy(go, 0.5f);
+    }
+    
+    public void MinusTime()
+    {
+        GameObject go = Instantiate(minusTxt, minusTxt.transform.position, minusTxt.transform.rotation, UICanvus);
+        Destroy(go, 0.5f);
+
     }
 }
