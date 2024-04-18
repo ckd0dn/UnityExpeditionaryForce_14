@@ -661,6 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a67876ecd7d93418f615374fcc3049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UICanvus: {fileID: 727168944}
   anim: {fileID: 599546632}
   firstCard: {fileID: 0}
   secondCard: {fileID: 0}
@@ -672,8 +673,9 @@ MonoBehaviour:
   imageDeath1: {fileID: 339496783}
   imageDeath2: {fileID: 1481258201}
   imageDeath3: {fileID: 460847672}
-  plusTxt: {fileID: 0}
-  minusTxt: {fileID: 0}
+  plusTxt: {fileID: 1734835163871435295, guid: bd4a358fe35ef2b46b151ec00036c5e1, type: 3}
+  minusTxt: {fileID: 7317857494446489868, guid: ce163d2675622f246ae166f2392c592c, type: 3}
+  hintNumbList: 
   cardList: []
 --- !u!4 &566726135
 Transform:
@@ -1687,7 +1689,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.117
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
